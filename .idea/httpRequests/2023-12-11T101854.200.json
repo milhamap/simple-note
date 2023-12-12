@@ -1,0 +1,14 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": [
+    {
+      "id": 4,
+      "name": "Fashion"
+    },
+    {
+      "id": 5,
+      "name": "Food"
+    }
+  ]
+}

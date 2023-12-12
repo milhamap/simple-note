@@ -1,0 +1,18 @@
+{
+  "code": 500,
+  "status": "INTERNAL SERVER ERROR",
+  "data": {
+    "Op": "dial",
+    "Net": "tcp",
+    "Source": null,
+    "Addr": {
+      "IP": "::1",
+      "Port": 3306,
+      "Zone": ""
+    },
+    "Err": {
+      "Syscall": "connectex",
+      "Err": 10061
+    }
+  }
+}

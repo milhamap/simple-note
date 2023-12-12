@@ -1,0 +1,22 @@
+GET http://localhost:3000/api/categories
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-11T101854.200.json
+
+###
+
+GET http://localhost:3000/api/categories
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-11T093628.500.json
+
+###
+

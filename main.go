@@ -1,8 +1,8 @@
 package main
 
 import (
-	"belajar-golang-restful-api/helper"
 	_ "github.com/go-sql-driver/mysql"
+	"simple-note/helper"
 )
 
 func main() {

@@ -46,6 +46,32 @@ git clone https://github.com/milhamap/simple-note.git
 cd simple-note
 ```
 
+## How to Use Application
+
+1. Install Golang Terlebih Dahulu <br>
+   [Download disini](https://go.dev/doc/install)
+2. Install all golang dependecies Terlebih Dahulu
+```
+$ go get
+```
+3. Create a new database in phpmyadmin with the name  `simple_note` for application database and `simple_note_test` for testing database
+4. Migration database using `golang migrate` for application database
+```
+$ migrate -database "mysql://root@tcp(localhost:3306)/simple_note" -path db/migrations up
+```
+5. Migration database using `golang migrate` for testing database
+```
+$ migrate -database "mysql://root@tcp(localhost:3306)/simple_note_test" -path db/migrations up
+```
+
+## How to Run
+
+1. Open the terminal/command prompt
+2. Enter the Following Command
+```
+$ go run main.go
+```
+
 ## API Documentation
 
 You can access this project API documentation at test.http

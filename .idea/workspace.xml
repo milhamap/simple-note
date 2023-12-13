@@ -40,6 +40,7 @@
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
     "Go Build.go build belajar-golang-restful-api.executor": "Run",
+    "Go Build.go build simple-note.executor": "Run",
     "Go Test.TestConnection in belajar-golang-restful-api/test.executor": "Run",
     "Go Test.TestFailCreateNote in simple-note/test.executor": "Run",
     "Go Test.TestFailDeleteNote in simple-note/test.executor": "Run",
@@ -73,7 +74,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "go.autoimport"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -81,7 +82,16 @@
       <recent name="D:\Documents\Developments\GOLANG\src\simple-note\public\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestUnauthorized in simple-note/test">
+  <component name="RunManager" selected="Go Build.go build simple-note">
+    <configuration name="go build simple-note" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="belajar-golang-dependency" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="simple-note" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestFailDeleteNote in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="belajar-golang-dependency" />
       <working_directory value="$PROJECT_DIR$/test" />
@@ -92,18 +102,6 @@
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
       <pattern value="^\QTestFailDeleteNote\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestFailGetNote in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="belajar-golang-dependency" />
-      <working_directory value="$PROJECT_DIR$/test" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="simple-note/test" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestFailGetNote\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestSuccessDeleteNote in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -144,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build simple-note" />
         <item itemvalue="Go Test.TestUnauthorized in simple-note/test" />
         <item itemvalue="Go Test.TestSuccessListNotes in simple-note/test" />
         <item itemvalue="Go Test.TestFailDeleteNote in simple-note/test" />
         <item itemvalue="Go Test.TestSuccessDeleteNote in simple-note/test" />
-        <item itemvalue="Go Test.TestFailGetNote in simple-note/test" />
       </list>
     </recent_temporary>
   </component>

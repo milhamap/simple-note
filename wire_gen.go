@@ -7,14 +7,14 @@
 package main
 
 import (
-	"belajar-golang-restful-api/app"
-	"belajar-golang-restful-api/controller"
-	"belajar-golang-restful-api/middleware"
-	"belajar-golang-restful-api/repository"
-	"belajar-golang-restful-api/service"
 	"github.com/go-playground/validator"
 	"github.com/google/wire"
 	"net/http"
+	"simple-note/app"
+	"simple-note/controller"
+	"simple-note/middleware"
+	"simple-note/repository"
+	"simple-note/service"
 )
 
 import (

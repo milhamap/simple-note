@@ -38,11 +38,20 @@
     "DefaultGoTemplateProperty": "Go File",
     "Go Build.go build belajar-golang-restful-api.executor": "Run",
     "Go Test.TestConnection in belajar-golang-restful-api/test.executor": "Run",
+    "Go Test.TestFailCreateNote in simple-note/test.executor": "Run",
+    "Go Test.TestFailDeleteNote in simple-note/test.executor": "Run",
+    "Go Test.TestFailGetNote in simple-note/test.executor": "Run",
+    "Go Test.TestFailUpdateNote in simple-note/test.executor": "Run",
     "Go Test.TestSimpleService in belajar-golang-restful-api/test.executor": "Run",
     "Go Test.TestSimpleServiceError in belajar-golang-restful-api/test.executor": "Run",
     "Go Test.TestSimpleServiceSuccess in belajar-golang-restful-api/test.executor": "Run",
     "Go Test.TestSuccessCreateCategory in belajar-golang-restful-api/test.executor": "Run",
     "Go Test.TestSuccessCreateNote in simple-note/test.executor": "Run",
+    "Go Test.TestSuccessDeleteNote in simple-note/test.executor": "Run",
+    "Go Test.TestSuccessGetNote in simple-note/test.executor": "Run",
+    "Go Test.TestSuccessListNotes in simple-note/test.executor": "Run",
+    "Go Test.TestSuccessUpdateNote in simple-note/test.executor": "Run",
+    "Go Test.TestUnauthorized in simple-note/test.executor": "Run",
     "HTTP Request.test | Create a new category.executor": "Run",
     "HTTP Request.test | Delete a category.executor": "Run",
     "HTTP Request.test | Get a category.executor": "Run",
@@ -64,20 +73,8 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager" selected="Go Test.TestSuccessCreateNote in simple-note/test">
-    <configuration name="TestSuccessCreateCategory in belajar-golang-restful-api/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="belajar-golang-dependency" />
-      <working_directory value="$PROJECT_DIR$/test" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="belajar-golang-restful-api/test" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestSuccessCreateCategory\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestSuccessCreateNote in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestUnauthorized in simple-note/test">
+    <configuration name="TestFailDeleteNote in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="belajar-golang-dependency" />
       <working_directory value="$PROJECT_DIR$/test" />
       <root_directory value="$PROJECT_DIR$" />
@@ -86,25 +83,64 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestSuccessCreateNote\E$" />
+      <pattern value="^\QTestFailDeleteNote\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="test | Delete a category" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="5" requestIdentifier="Delete a category" runType="Run single request">
+    <configuration name="TestFailGetNote in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="belajar-golang-dependency" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="simple-note/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestFailGetNote\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="test | Get a category" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="3" requestIdentifier="Get a category" runType="Run single request">
+    <configuration name="TestSuccessDeleteNote in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="belajar-golang-dependency" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="simple-note/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestSuccessDeleteNote\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="test | Update a category" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="4" requestIdentifier="Update a category" runType="Run single request">
+    <configuration name="TestSuccessListNotes in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="belajar-golang-dependency" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="simple-note/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestSuccessListNotes\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUnauthorized in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="belajar-golang-dependency" />
+      <working_directory value="$PROJECT_DIR$/test" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="simple-note/test" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUnauthorized\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestSuccessCreateNote in simple-note/test" />
-        <item itemvalue="Go Test.TestSuccessCreateCategory in belajar-golang-restful-api/test" />
-        <item itemvalue="HTTP Request.test | Delete a category" />
-        <item itemvalue="HTTP Request.test | Get a category" />
-        <item itemvalue="HTTP Request.test | Update a category" />
+        <item itemvalue="Go Test.TestUnauthorized in simple-note/test" />
+        <item itemvalue="Go Test.TestSuccessListNotes in simple-note/test" />
+        <item itemvalue="Go Test.TestFailDeleteNote in simple-note/test" />
+        <item itemvalue="Go Test.TestSuccessDeleteNote in simple-note/test" />
+        <item itemvalue="Go Test.TestFailGetNote in simple-note/test" />
       </list>
     </recent_temporary>
   </component>

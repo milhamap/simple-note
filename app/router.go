@@ -1,19 +1,19 @@
 package app
 
 import (
-	"belajar-golang-restful-api/controller"
-	"belajar-golang-restful-api/exception"
 	"github.com/julienschmidt/httprouter"
+	"simple-note/controller"
+	"simple-note/exception"
 )
 
-func NewRouter(categoryController controller.CategoryControllerInterface) *httprouter.Router {
+func NewRouter(noteController controller.NoteControllerInterface) *httprouter.Router {
 	router := httprouter.New()
 
-	router.GET("/api/categories", categoryController.FindAll)
-	router.GET("/api/categories/:categoryId", categoryController.FindById)
-	router.POST("/api/categories", categoryController.Create)
-	router.PUT("/api/categories/:categoryId", categoryController.Update)
-	router.DELETE("/api/categories/:categoryId", categoryController.Delete)
+	router.GET("/api/notes", noteController.FindAll)
+	router.GET("/api/notes/:noteId", noteController.FindById)
+	router.POST("/api/notes", noteController.Create)
+	router.PUT("/api/notes/:noteId", noteController.Update)
+	router.DELETE("/api/notes/:noteId", noteController.Delete)
 
 	router.PanicHandler = exception.ErrorHandler
 

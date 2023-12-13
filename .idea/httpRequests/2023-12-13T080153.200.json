@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "id": 2,
+    "title": "Laravel dengan Docker",
+    "content": "Belajar Laravel dengan Docker"
+  }
+}

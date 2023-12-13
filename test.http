@@ -1,34 +1,36 @@
 ### Get all categories
-GET http://localhost:3000/api/categories
+GET http://localhost:3000/api/notes
 X-API-KEY: RAHASIA
 Accept: application/json
 
 ### Create a new category
-POST http://localhost:3000/api/categories
+POST http://localhost:3000/api/notes
 X-API-KEY: RAHASIA
 Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Food"
+    "title": "Laravel dengan Docker",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nunc sed aliquam ultricies, nisl nunc aliquet nunc, vitae aliquam nisl nunc vitae nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl."
 }
 
 ### Get a category
-GET http://localhost:3000/api/categories/5
+GET http://localhost:3000/api/notes/3
 X-API-KEY: RAHASIA
 Accept: application/json
 
 ### Update a category
-PUT http://localhost:3000/api/categories/4
+PUT http://localhost:3000/api/notes/3
 X-API-KEY: RAHASIA
 Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Fashion"
+  "title": "Laravel dengan Docker",
+  "content": "Belajar Laravel dengan Docker"
 }
 
 ### Delete a category
-DELETE http://localhost:3000/api/categories/3
+DELETE http://localhost:3000/api/notes/2
 X-API-KEY: RAHASIA
 Accept: application/json

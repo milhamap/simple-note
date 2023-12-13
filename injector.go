@@ -15,20 +15,20 @@ import (
 	"net/http"
 )
 
-var categorySet = wire.NewSet(
-	repository.NewCategoryRepository,
-	wire.Bind(new(repository.CategoryRepositoryInterface), new(*repository.CategoryRepository)),
-	service.NewCategoryService,
-	wire.Bind(new(service.CategoryServiceInterface), new(*service.CategoryService)),
-	controller.NewCategoryController,
-	wire.Bind(new(controller.CategoryControllerInterface), new(*controller.CategoryController)),
+var noteSet = wire.NewSet(
+	repository.NewNoteRepository,
+	wire.Bind(new(repository.NoteRepositoryInterface), new(*repository.NoteRepository)),
+	service.NewNoteService,
+	wire.Bind(new(service.NoteServiceInterface), new(*service.NoteService)),
+	controller.NewNoteController,
+	wire.Bind(new(controller.NoteControllerInterface), new(*controller.NoteController)),
 )
 
 func InitializedServer() *http.Server {
 	wire.Build(
 		app.NewDB,
 		validator.New,
-		categorySet,
+		noteSet,
 		app.NewRouter,
 		wire.Bind(new(http.Handler), new(*httprouter.Router)),
 		middleware.NewAuthMiddleware,

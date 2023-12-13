@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-type CategoryControllerInterface interface {
+type NoteControllerInterface interface {
 	Create(writer http.ResponseWriter, request *http.Request, params httprouter.Params)
 	Update(writer http.ResponseWriter, request *http.Request, params httprouter.Params)
 	Delete(writer http.ResponseWriter, request *http.Request, params httprouter.Params)

@@ -1,13 +1,6 @@
 package test
 
 import (
-	"belajar-golang-restful-api/app"
-	"belajar-golang-restful-api/controller"
-	"belajar-golang-restful-api/helper"
-	"belajar-golang-restful-api/middleware"
-	"belajar-golang-restful-api/model/domain"
-	"belajar-golang-restful-api/repository"
-	"belajar-golang-restful-api/service"
 	"context"
 	"database/sql"
 	"encoding/json"
@@ -17,6 +10,13 @@ import (
 	"io"
 	"net/http"
 	"net/http/httptest"
+	"simple-note/app"
+	"simple-note/controller"
+	"simple-note/helper"
+	"simple-note/middleware"
+	"simple-note/model/domain"
+	"simple-note/repository"
+	"simple-note/service"
 	"strconv"
 	"strings"
 	"testing"
@@ -24,7 +24,7 @@ import (
 )
 
 func setupTestDB() *sql.DB {
-	db, err := sql.Open("mysql", "root@tcp(localhost:3306)/golang_restful_api_test")
+	db, err := sql.Open("mysql", "root@tcp(localhost:3306)/simple_note_test")
 	helper.PanicIfError(err)
 
 	db.SetMaxIdleConns(5)
@@ -37,25 +37,25 @@ func setupTestDB() *sql.DB {
 
 func setupRouter(db *sql.DB) http.Handler {
 	validate := validator.New()
-	categoryRepository := repository.NewCategoryRepository()
-	categoryService := service.NewCategoryService(categoryRepository, db, validate)
-	categoryController := controller.NewCategoryController(categoryService)
-	router := app.NewRouter(categoryController)
+	noteRepository := repository.NewNoteRepository()
+	noteService := service.NewNoteService(noteRepository, db, validate)
+	noteController := controller.NewNoteController(noteService)
+	router := app.NewRouter(noteController)
 
 	return middleware.NewAuthMiddleware(router)
 }
 
-func truncateCategory(db *sql.DB) {
-	db.Exec("TRUNCATE category")
+func truncateNote(db *sql.DB) {
+	db.Exec("TRUNCATE note")
 }
 
-func TestSuccessCreateCategory(t *testing.T) {
+func TestSuccessCreateNote(t *testing.T) {
 	db := setupTestDB()
-	truncateCategory(db)
+	truncateNote(db)
 	router := setupRouter(db)
 
-	requestBody := strings.NewReader(`{"name":"Handphone"}`)
-	request := httptest.NewRequest(http.MethodPost, "http://localhost:3000/api/categories", requestBody)
+	requestBody := strings.NewReader(`{"title": "Belajar Golang", "content": "Belajar Golang dari dasar"}`)
+	request := httptest.NewRequest(http.MethodPost, "http://localhost:3000/api/notes", requestBody)
 	request.Header.Set("Content-Type", "application/json")
 	request.Header.Set("X-API-KEY", "RAHASIA")
 
@@ -72,84 +72,17 @@ func TestSuccessCreateCategory(t *testing.T) {
 
 	assert.Equal(t, 200, int(responseBody["code"].(float64)))
 	assert.Equal(t, "OK", responseBody["status"])
-	assert.Equal(t, "Handphone", responseBody["data"].(map[string]interface{})["name"])
+	assert.Equal(t, "Belajar Golang", responseBody["data"].(map[string]interface{})["title"])
+	assert.Equal(t, "Belajar Golang dari dasar", responseBody["data"].(map[string]interface{})["content"])
 }
 
-func TestFailCreateCategory(t *testing.T) {
+func TestFailCreateNote(t *testing.T) {
 	db := setupTestDB()
-	truncateCategory(db)
+	truncateNote(db)
 	router := setupRouter(db)
 
-	requestBody := strings.NewReader(`{"name":""}`)
-	request := httptest.NewRequest(http.MethodPost, "http://localhost:3000/api/categories", requestBody)
-	request.Header.Set("Content-Type", "application/json")
-	request.Header.Set("X-API-KEY", "RAHASIA")
-
-	recorder := httptest.NewRecorder()
-
-	router.ServeHTTP(recorder, request)
-
-	response := recorder.Result()
-	assert.Equal(t, 400, response.StatusCode)
-
-	body, _ := io.ReadAll(response.Body)
-	responseBody := map[string]interface{}{}
-	json.Unmarshal(body, &responseBody)
-
-	assert.Equal(t, 400, int(responseBody["code"].(float64)))
-	assert.Equal(t, "BAD REQUEST", responseBody["status"])
-}
-
-func TestSuccessUpdateCategory(t *testing.T) {
-	db := setupTestDB()
-	truncateCategory(db)
-
-	tx, _ := db.Begin()
-	categoryRepository := repository.NewCategoryRepository()
-	category := categoryRepository.Store(context.Background(), tx, domain.Category{
-		Name: "Laptop",
-	})
-	tx.Commit()
-
-	router := setupRouter(db)
-
-	requestBody := strings.NewReader(`{"name":"Handphone"}`)
-	request := httptest.NewRequest(http.MethodPut, "http://localhost:3000/api/categories/"+strconv.Itoa(category.Id), requestBody)
-	request.Header.Set("Content-Type", "application/json")
-	request.Header.Set("X-API-KEY", "RAHASIA")
-
-	recorder := httptest.NewRecorder()
-
-	router.ServeHTTP(recorder, request)
-
-	response := recorder.Result()
-	assert.Equal(t, 200, response.StatusCode)
-
-	body, _ := io.ReadAll(response.Body)
-	responseBody := map[string]interface{}{}
-	json.Unmarshal(body, &responseBody)
-
-	assert.Equal(t, 200, int(responseBody["code"].(float64)))
-	assert.Equal(t, "OK", responseBody["status"])
-	assert.Equal(t, category.Id, int(responseBody["data"].(map[string]interface{})["id"].(float64)))
-	assert.Equal(t, "Handphone", responseBody["data"].(map[string]interface{})["name"])
-}
-
-func TestFailUpdateCategory(t *testing.T) {
-	db := setupTestDB()
-	truncateCategory(db)
-
-	tx, _ := db.Begin()
-	categoryRepository := repository.NewCategoryRepository()
-	category := categoryRepository.Store(context.Background(), tx, domain.Category{
-		Name: "Laptop",
-	})
-	tx.Commit()
-
-	router := setupRouter(db)
-
-	requestBody := strings.NewReader(`{"name":""}`)
-	request := httptest.NewRequest(http.MethodPut, "http://localhost:3000/api/categories/"+strconv.Itoa(category.Id), requestBody)
+	requestBody := strings.NewReader(`{"title":"", "content":""}`)
+	request := httptest.NewRequest(http.MethodPost, "http://localhost:3000/api/notes", requestBody)
 	request.Header.Set("Content-Type", "application/json")
 	request.Header.Set("X-API-KEY", "RAHASIA")
 
@@ -168,20 +101,23 @@ func TestFailUpdateCategory(t *testing.T) {
 	assert.Equal(t, "BAD REQUEST", responseBody["status"])
 }
 
-func TestSuccessGetCategory(t *testing.T) {
+func TestSuccessUpdateNote(t *testing.T) {
 	db := setupTestDB()
-	truncateCategory(db)
+	truncateNote(db)
 
 	tx, _ := db.Begin()
-	categoryRepository := repository.NewCategoryRepository()
-	category := categoryRepository.Store(context.Background(), tx, domain.Category{
-		Name: "Laptop",
+	noteRepository := repository.NewNoteRepository()
+	note := noteRepository.Store(context.Background(), tx, domain.Note{
+		Title:   "Belajar Golang",
+		Content: "Belajar Golang dari dasar",
 	})
 	tx.Commit()
 
 	router := setupRouter(db)
 
-	request := httptest.NewRequest(http.MethodGet, "http://localhost:3000/api/categories/"+strconv.Itoa(category.Id), nil)
+	requestBody := strings.NewReader(`{"title": "Belajar Golang", "content": "Belajar Golang dari dasar dengan menggunakan goland"}`)
+	request := httptest.NewRequest(http.MethodPut, "http://localhost:3000/api/notes/"+strconv.Itoa(note.Id), requestBody)
+	request.Header.Set("Content-Type", "application/json")
 	request.Header.Set("X-API-KEY", "RAHASIA")
 
 	recorder := httptest.NewRecorder()
@@ -197,16 +133,86 @@ func TestSuccessGetCategory(t *testing.T) {
 
 	assert.Equal(t, 200, int(responseBody["code"].(float64)))
 	assert.Equal(t, "OK", responseBody["status"])
-	assert.Equal(t, category.Id, int(responseBody["data"].(map[string]interface{})["id"].(float64)))
-	assert.Equal(t, category.Name, responseBody["data"].(map[string]interface{})["name"])
+	assert.Equal(t, note.Id, int(responseBody["data"].(map[string]interface{})["id"].(float64)))
+	assert.Equal(t, "Belajar Golang", responseBody["data"].(map[string]interface{})["title"])
+	assert.Equal(t, "Belajar Golang dari dasar dengan menggunakan goland", responseBody["data"].(map[string]interface{})["content"])
 }
 
-func TestFailGetCategory(t *testing.T) {
+func TestFailUpdateNote(t *testing.T) {
 	db := setupTestDB()
-	truncateCategory(db)
+	truncateNote(db)
+
+	tx, _ := db.Begin()
+	noteRepository := repository.NewNoteRepository()
+	note := noteRepository.Store(context.Background(), tx, domain.Note{
+		Title:   "Belajar Golang",
+		Content: "Belajar Golang dari dasar",
+	})
+	tx.Commit()
+
 	router := setupRouter(db)
 
-	request := httptest.NewRequest(http.MethodGet, "http://localhost:3000/api/categories/404", nil)
+	requestBody := strings.NewReader(`{"title":"", "content":""}`)
+	request := httptest.NewRequest(http.MethodPut, "http://localhost:3000/api/notes/"+strconv.Itoa(note.Id), requestBody)
+	request.Header.Set("Content-Type", "application/json")
+	request.Header.Set("X-API-KEY", "RAHASIA")
+
+	recorder := httptest.NewRecorder()
+
+	router.ServeHTTP(recorder, request)
+
+	response := recorder.Result()
+	assert.Equal(t, 400, response.StatusCode)
+
+	body, _ := io.ReadAll(response.Body)
+	responseBody := map[string]interface{}{}
+	json.Unmarshal(body, &responseBody)
+
+	assert.Equal(t, 400, int(responseBody["code"].(float64)))
+	assert.Equal(t, "BAD REQUEST", responseBody["status"])
+}
+
+func TestSuccessGetNote(t *testing.T) {
+	db := setupTestDB()
+	truncateNote(db)
+
+	tx, _ := db.Begin()
+	noteRepository := repository.NewNoteRepository()
+	note := noteRepository.Store(context.Background(), tx, domain.Note{
+		Title:   "Belajar Golang",
+		Content: "Belajar Golang dari dasar",
+	})
+	tx.Commit()
+
+	router := setupRouter(db)
+
+	request := httptest.NewRequest(http.MethodGet, "http://localhost:3000/api/notes/"+strconv.Itoa(note.Id), nil)
+	request.Header.Set("X-API-KEY", "RAHASIA")
+
+	recorder := httptest.NewRecorder()
+
+	router.ServeHTTP(recorder, request)
+
+	response := recorder.Result()
+	assert.Equal(t, 200, response.StatusCode)
+
+	body, _ := io.ReadAll(response.Body)
+	responseBody := map[string]interface{}{}
+	json.Unmarshal(body, &responseBody)
+
+	assert.Equal(t, 200, int(responseBody["code"].(float64)))
+	assert.Equal(t, "OK", responseBody["status"])
+	assert.Equal(t, note.Id, int(responseBody["data"].(map[string]interface{})["id"].(float64)))
+	assert.Equal(t, note.Title, responseBody["data"].(map[string]interface{})["title"])
+	assert.Equal(t, note.Content, responseBody["data"].(map[string]interface{})["content"])
+}
+
+func TestFailGetNote(t *testing.T) {
+	db := setupTestDB()
+	truncateNote(db)
+	router := setupRouter(db)
+
+	request := httptest.NewRequest(http.MethodGet, "http://localhost:3000/api/notes/404", nil)
 	request.Header.Set("X-API-KEY", "RAHASIA")
 
 	recorder := httptest.NewRecorder()
@@ -224,20 +230,21 @@ func TestFailGetCategory(t *testing.T) {
 	assert.Equal(t, "NOT FOUND", responseBody["status"])
 }
 
-func TestSuccessDeleteCategory(t *testing.T) {
+func TestSuccessDeleteNote(t *testing.T) {
 	db := setupTestDB()
-	truncateCategory(db)
+	truncateNote(db)
 
 	tx, _ := db.Begin()
-	categoryRepository := repository.NewCategoryRepository()
-	category := categoryRepository.Store(context.Background(), tx, domain.Category{
-		Name: "Laptop",
+	noteRepository := repository.NewNoteRepository()
+	note := noteRepository.Store(context.Background(), tx, domain.Note{
+		Title:   "Belajar Golang",
+		Content: "Belajar Golang dari dasar",
 	})
 	tx.Commit()
 
 	router := setupRouter(db)
 
-	request := httptest.NewRequest(http.MethodDelete, "http://localhost:3000/api/categories/"+strconv.Itoa(category.Id), nil)
+	request := httptest.NewRequest(http.MethodDelete, "http://localhost:3000/api/notes/"+strconv.Itoa(note.Id), nil)
 	request.Header.Set("X-API-KEY", "RAHASIA")
 
 	recorder := httptest.NewRecorder()
@@ -255,12 +262,12 @@ func TestSuccessDeleteCategory(t *testing.T) {
 	assert.Equal(t, "OK", responseBody["status"])
 }
 
-func TestFailDeleteCategory(t *testing.T) {
+func TestFailDeleteNote(t *testing.T) {
 	db := setupTestDB()
-	truncateCategory(db)
+	truncateNote(db)
 	router := setupRouter(db)
 
-	request := httptest.NewRequest(http.MethodDelete, "http://localhost:3000/api/categories/404", nil)
+	request := httptest.NewRequest(http.MethodDelete, "http://localhost:3000/api/notes/404", nil)
 	request.Header.Set("X-API-KEY", "RAHASIA")
 
 	recorder := httptest.NewRecorder()
@@ -278,23 +285,25 @@ func TestFailDeleteCategory(t *testing.T) {
 	assert.Equal(t, "NOT FOUND", responseBody["status"])
 }
 
-func TestSuccessListCategories(t *testing.T) {
+func TestSuccessListNotes(t *testing.T) {
 	db := setupTestDB()
-	truncateCategory(db)
+	truncateNote(db)
 
 	tx, _ := db.Begin()
-	categoryRepository := repository.NewCategoryRepository()
-	category1 := categoryRepository.Store(context.Background(), tx, domain.Category{
-		Name: "Laptop",
+	noteRepository := repository.NewNoteRepository()
+	note1 := noteRepository.Store(context.Background(), tx, domain.Note{
+		Title:   "Belajar Golang",
+		Content: "Belajar Golang dari dasar",
 	})
-	category2 := categoryRepository.Store(context.Background(), tx, domain.Category{
-		Name: "Computer",
+	note2 := noteRepository.Store(context.Background(), tx, domain.Note{
+		Title:   "Belajar NodeJS",
+		Content: "Belajar NodeJS dari dasar",
 	})
 	tx.Commit()
 
 	router := setupRouter(db)
 
-	request := httptest.NewRequest(http.MethodGet, "http://localhost:3000/api/categories", nil)
+	request := httptest.NewRequest(http.MethodGet, "http://localhost:3000/api/notes", nil)
 	request.Header.Set("X-API-KEY", "RAHASIA")
 
 	recorder := httptest.NewRecorder()
@@ -311,25 +320,27 @@ func TestSuccessListCategories(t *testing.T) {
 	assert.Equal(t, 200, int(responseBody["code"].(float64)))
 	assert.Equal(t, "OK", responseBody["status"])
 
-	var categories = responseBody["data"].([]interface{})
+	var notes = responseBody["data"].([]interface{})
 
-	categoryResponse1 := categories[0].(map[string]interface{})
-	categoryResponse2 := categories[1].(map[string]interface{})
+	noteResponse1 := notes[0].(map[string]interface{})
+	noteResponse2 := notes[1].(map[string]interface{})
 
-	assert.Equal(t, category1.Id, int(categoryResponse1["id"].(float64)))
-	assert.Equal(t, category1.Name, categoryResponse1["name"])
+	assert.Equal(t, note1.Id, int(noteResponse1["id"].(float64)))
+	assert.Equal(t, note1.Title, noteResponse1["title"])
+	assert.Equal(t, note1.Content, noteResponse1["content"])
 
-	assert.Equal(t, category2.Id, int(categoryResponse2["id"].(float64)))
-	assert.Equal(t, category2.Name, categoryResponse2["name"])
+	assert.Equal(t, note2.Id, int(noteResponse2["id"].(float64)))
+	assert.Equal(t, note2.Title, noteResponse2["title"])
+	assert.Equal(t, note2.Content, noteResponse2["content"])
 }
 
 func TestUnauthorized(t *testing.T) {
 	db := setupTestDB()
-	truncateCategory(db)
+	truncateNote(db)
 
 	router := setupRouter(db)
 
-	request := httptest.NewRequest(http.MethodGet, "http://localhost:3000/api/categories", nil)
+	request := httptest.NewRequest(http.MethodGet, "http://localhost:3000/api/notes", nil)
 	request.Header.Set("X-API-KEY", "SALAH")
 
 	recorder := httptest.NewRecorder()

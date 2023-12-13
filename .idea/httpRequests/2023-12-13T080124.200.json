@@ -1,0 +1,9 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": {
+    "id": 2,
+    "title": "Laravel dengan Docker",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nunc sed aliquam ultricies, nisl nunc aliquet nunc, vitae aliquam nisl nunc vitae nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl."
+  }
+}

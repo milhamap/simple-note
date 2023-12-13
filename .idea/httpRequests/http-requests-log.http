@@ -1,3 +1,185 @@
+DELETE http://localhost:3000/api/notes/2
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T080440.200.json
+
+###
+
+GET http://localhost:3000/api/notes/3
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T080433.404.json
+
+###
+
+PUT http://localhost:3000/api/notes/3
+X-API-KEY: RAHASIA
+Accept: application/json
+Content-Type: application/json
+Content-Length: 84
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "Laravel dengan Docker",
+  "content": "Belajar Laravel dengan Docker"
+}
+
+<> 2023-12-13T080425.404.json
+
+###
+
+DELETE http://localhost:3000/api/notes/3
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T080414.404.json
+
+###
+
+DELETE http://localhost:3000/api/notes/3
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T080340.404.json
+
+###
+
+DELETE http://localhost:3000/api/notes/3
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T080207.404.json
+
+###
+
+GET http://localhost:3000/api/notes/2
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T080158.200.json
+
+###
+
+PUT http://localhost:3000/api/notes/2
+X-API-KEY: RAHASIA
+Accept: application/json
+Content-Type: application/json
+Content-Length: 84
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "title": "Laravel dengan Docker",
+  "content": "Belajar Laravel dengan Docker"
+}
+
+<> 2023-12-13T080153.200.json
+
+###
+
+GET http://localhost:3000/api/notes/2
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T080124.200.json
+
+###
+
+GET http://localhost:3000/api/notes
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T080111.200.json
+
+###
+
+POST http://localhost:3000/api/notes
+X-API-KEY: RAHASIA
+Accept: application/json
+Content-Type: application/json
+Content-Length: 658
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "title": "Laravel dengan Docker",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nunc sed aliquam ultricies, nisl nunc aliquet nunc, vitae aliquam nisl nunc vitae nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl."
+}
+
+<> 2023-12-13T080107.200.json
+
+###
+
+GET http://localhost:3000/api/notes
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T075950.200.json
+
+###
+
+POST http://localhost:3000/api/notes
+X-API-KEY: RAHASIA
+Accept: application/json
+Content-Type: application/json
+Content-Length: 95
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+    "title": "Belajar Node.js",
+    "content": "Belajar Node.js dengan membuat RESTful API"
+}
+
+<> 2023-12-13T075945.200.json
+
+###
+
+GET http://localhost:3000/api/notes
+X-API-KEY: RAHASIA
+Accept: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-12-13T075909.200.json
+
+###
+
 GET http://localhost:3000/api/categories
 X-API-KEY: RAHASIA
 Accept: application/json

@@ -1,8 +1,8 @@
 package app
 
 import (
-	"belajar-golang-restful-api/middleware"
 	"net/http"
+	"simple-note/middleware"
 )
 
 func NewServer(authMiddleware *middleware.AuthMiddleware) *http.Server {

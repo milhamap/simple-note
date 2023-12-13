@@ -1,21 +1,22 @@
 package helper
 
 import (
-	"belajar-golang-restful-api/model/domain"
-	"belajar-golang-restful-api/model/web"
+	"simple-note/model/domain"
+	"simple-note/model/web"
 )
 
-func ToCategoryResponse(category domain.Category) web.CategoryResponse {
-	return web.CategoryResponse{
-		Id:   category.Id,
-		Name: category.Name,
+func ToNoteResponse(note domain.Note) web.NoteResponse {
+	return web.NoteResponse{
+		Id:      note.Id,
+		Title:   note.Title,
+		Content: note.Content,
 	}
 }
 
-func ToCategoryResponses(categories []domain.Category) []web.CategoryResponse {
-	var categoryResponses []web.CategoryResponse
-	for _, category := range categories {
-		categoryResponses = append(categoryResponses, ToCategoryResponse(category))
+func ToNoteResponses(notes []domain.Note) []web.NoteResponse {
+	var noteResponses []web.NoteResponse
+	for _, note := range notes {
+		noteResponses = append(noteResponses, ToNoteResponse(note))
 	}
-	return categoryResponses
+	return noteResponses
 }

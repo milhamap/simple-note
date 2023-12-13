@@ -1,0 +1,16 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": [
+    {
+      "id": 1,
+      "title": "Belajar Node.js",
+      "content": "Belajar Node.js dengan membuat RESTful API"
+    },
+    {
+      "id": 2,
+      "title": "Laravel dengan Docker",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nunc sed aliquam ultricies, nisl nunc aliquet nunc, vitae aliquam nisl nunc vitae nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl. Sed vitae nisl auctor, aliquet nisl sed, aliquam nisl."
+    }
+  ]
+}

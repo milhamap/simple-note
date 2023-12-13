@@ -24,17 +24,17 @@ import (
 // Injectors from injector.go:
 
 func InitializedServer() *http.Server {
-	categoryRepository := repository.NewCategoryRepository()
+	noteRepository := repository.NewNoteRepository()
 	db := app.NewDB()
 	validate := validator.New()
-	categoryService := service.NewCategoryService(categoryRepository, db, validate)
-	categoryController := controller.NewCategoryController(categoryService)
-	router := app.NewRouter(categoryController)
+	noteService := service.NewNoteService(noteRepository, db, validate)
+	noteController := controller.NewNoteController(noteService)
+	router := app.NewRouter(noteController)
 	authMiddleware := middleware.NewAuthMiddleware(router)
-	server := NewServer(authMiddleware)
+	server := app.NewServer(authMiddleware)
 	return server
 }
 
 // injector.go:
 
-var categorySet = wire.NewSet(repository.NewCategoryRepository, wire.Bind(new(repository.CategoryRepositoryInterface), new(*repository.CategoryRepository)), service.NewCategoryService, wire.Bind(new(service.CategoryServiceInterface), new(*service.CategoryService)), controller.NewCategoryController, wire.Bind(new(controller.CategoryControllerInterface), new(*controller.CategoryController)))
+var noteSet = wire.NewSet(repository.NewNoteRepository, wire.Bind(new(repository.NoteRepositoryInterface), new(*repository.NoteRepository)), service.NewNoteService, wire.Bind(new(service.NoteServiceInterface), new(*service.NoteService)), controller.NewNoteController, wire.Bind(new(controller.NoteControllerInterface), new(*controller.NoteController)))

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df51da56-cd4d-45fa-a217-27608ca18e5a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apispec.json" beforeDir="false" afterPath="$PROJECT_DIR$/apispec.json" afterDir="false" />
-    </list>
+    <list default="true" id="df51da56-cd4d-45fa-a217-27608ca18e5a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,41 +33,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go Build.go build belajar-golang-restful-api.executor&quot;: &quot;Run&quot;,
-    &quot;Go Test.TestConnection in belajar-golang-restful-api/test.executor&quot;: &quot;Run&quot;,
-    &quot;Go Test.TestSimpleService in belajar-golang-restful-api/test.executor&quot;: &quot;Run&quot;,
-    &quot;Go Test.TestSimpleServiceError in belajar-golang-restful-api/test.executor&quot;: &quot;Run&quot;,
-    &quot;Go Test.TestSimpleServiceSuccess in belajar-golang-restful-api/test.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.test | Get all categories.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/Developments/GOLANG/src/belajar-golang-logging&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build belajar-golang-restful-api.executor": "Run",
+    "Go Test.TestConnection in belajar-golang-restful-api/test.executor": "Run",
+    "Go Test.TestSimpleService in belajar-golang-restful-api/test.executor": "Run",
+    "Go Test.TestSimpleServiceError in belajar-golang-restful-api/test.executor": "Run",
+    "Go Test.TestSimpleServiceSuccess in belajar-golang-restful-api/test.executor": "Run",
+    "Go Test.TestSuccessCreateCategory in belajar-golang-restful-api/test.executor": "Run",
+    "Go Test.TestSuccessCreateNote in simple-note/test.executor": "Run",
+    "HTTP Request.test | Create a new category.executor": "Run",
+    "HTTP Request.test | Delete a category.executor": "Run",
+    "HTTP Request.test | Get a category.executor": "Run",
+    "HTTP Request.test | Get all categories.executor": "Run",
+    "HTTP Request.test | Update a category.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "git-widget-placeholder": "master",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "D:/Documents/Developments/GOLANG/src/simple-note",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
-  <component name="RunManager" selected="HTTP Request.test | Get all categories">
-    <configuration name="go build belajar-golang-restful-api" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="belajar-golang-dependency" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="belajar-golang-restful-api" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestConnection in belajar-golang-restful-api/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="Go Test.TestSuccessCreateNote in simple-note/test">
+    <configuration name="TestSuccessCreateCategory in belajar-golang-restful-api/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="belajar-golang-dependency" />
       <working_directory value="$PROJECT_DIR$/test" />
       <root_directory value="$PROJECT_DIR$" />
@@ -79,43 +74,37 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestConnection\E$" />
+      <pattern value="^\QTestSuccessCreateCategory\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSimpleServiceError in belajar-golang-restful-api/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSuccessCreateNote in simple-note/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="belajar-golang-dependency" />
       <working_directory value="$PROJECT_DIR$/test" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="belajar-golang-restful-api/test" />
+      <package value="simple-note/test" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestSimpleServiceError\E$" />
+      <pattern value="^\QTestSuccessCreateNote\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSimpleServiceSuccess in belajar-golang-restful-api/test" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="belajar-golang-dependency" />
-      <working_directory value="$PROJECT_DIR$/test" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="belajar-golang-restful-api/test" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestSimpleServiceSuccess\E$" />
+    <configuration name="test | Delete a category" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="5" requestIdentifier="Delete a category" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="test | Get all categories" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" requestIdentifier="Get all categories" runType="Run single request">
+    <configuration name="test | Get a category" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="3" requestIdentifier="Get a category" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="test | Update a category" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" index="4" requestIdentifier="Update a category" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.test | Get all categories" />
-        <item itemvalue="Go Build.go build belajar-golang-restful-api" />
-        <item itemvalue="Go Test.TestConnection in belajar-golang-restful-api/test" />
-        <item itemvalue="Go Test.TestSimpleServiceSuccess in belajar-golang-restful-api/test" />
-        <item itemvalue="Go Test.TestSimpleServiceError in belajar-golang-restful-api/test" />
+        <item itemvalue="Go Test.TestSuccessCreateNote in simple-note/test" />
+        <item itemvalue="Go Test.TestSuccessCreateCategory in belajar-golang-restful-api/test" />
+        <item itemvalue="HTTP Request.test | Delete a category" />
+        <item itemvalue="HTTP Request.test | Get a category" />
+        <item itemvalue="HTTP Request.test | Update a category" />
       </list>
     </recent_temporary>
   </component>

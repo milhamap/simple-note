@@ -1,0 +1,11 @@
+{
+  "code": 200,
+  "status": "OK",
+  "data": [
+    {
+      "id": 1,
+      "title": "Belajar Node.js",
+      "content": "Belajar Node.js dengan membuat RESTful API"
+    }
+  ]
+}

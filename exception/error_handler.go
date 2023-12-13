@@ -1,10 +1,10 @@
 package exception
 
 import (
-	"belajar-golang-restful-api/helper"
-	"belajar-golang-restful-api/model/web"
 	"github.com/go-playground/validator"
 	"net/http"
+	"simple-note/helper"
+	"simple-note/model/web"
 )
 
 func ErrorHandler(writer http.ResponseWriter, request *http.Request, err interface{}) {

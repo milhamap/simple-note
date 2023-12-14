@@ -1,9 +1,9 @@
 package middleware
 
 import (
+	"github.com/milhamap/simple-note/helper"
+	"github.com/milhamap/simple-note/model/web"
 	"net/http"
-	"simple-note/helper"
-	"simple-note/model/web"
 )
 
 type AuthMiddleware struct {

@@ -7,12 +7,12 @@ import (
 	"github.com/go-playground/validator"
 	"github.com/google/wire"
 	"github.com/julienschmidt/httprouter"
+	"github.com/milhamap/simple-note/app"
+	"github.com/milhamap/simple-note/controller"
+	"github.com/milhamap/simple-note/middleware"
+	"github.com/milhamap/simple-note/repository"
+	"github.com/milhamap/simple-note/service"
 	"net/http"
-	"simple-note/app"
-	"simple-note/controller"
-	"simple-note/middleware"
-	"simple-note/repository"
-	"simple-note/service"
 )
 
 var noteSet = wire.NewSet(

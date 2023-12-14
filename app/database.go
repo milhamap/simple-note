@@ -2,7 +2,7 @@ package app
 
 import (
 	"database/sql"
-	"simple-note/helper"
+	"github.com/milhamap/simple-note/helper"
 	"time"
 )
 

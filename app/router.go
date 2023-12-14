@@ -2,8 +2,8 @@ package app
 
 import (
 	"github.com/julienschmidt/httprouter"
-	"simple-note/controller"
-	"simple-note/exception"
+	"github.com/milhamap/simple-note/controller"
+	"github.com/milhamap/simple-note/exception"
 )
 
 func NewRouter(noteController controller.NoteControllerInterface) *httprouter.Router {

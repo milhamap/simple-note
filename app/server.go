@@ -1,8 +1,8 @@
 package app
 
 import (
+	"github.com/milhamap/simple-note/middleware"
 	"net/http"
-	"simple-note/middleware"
 )
 
 func NewServer(authMiddleware *middleware.AuthMiddleware) *http.Server {

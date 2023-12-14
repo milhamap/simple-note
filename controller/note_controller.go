@@ -2,10 +2,10 @@ package controller
 
 import (
 	"github.com/julienschmidt/httprouter"
+	"github.com/milhamap/simple-note/helper"
+	"github.com/milhamap/simple-note/model/web"
+	"github.com/milhamap/simple-note/service"
 	"net/http"
-	"simple-note/helper"
-	"simple-note/model/web"
-	"simple-note/service"
 	"strconv"
 )
 

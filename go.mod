@@ -1,4 +1,4 @@
-module simple-note
+module github.com/milhamap/simple-note
 
 go 1.21.3
 

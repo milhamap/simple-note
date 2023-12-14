@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"simple-note/model/web"
+	"github.com/milhamap/simple-note/model/web"
 )
 
 type NoteServiceInterface interface {

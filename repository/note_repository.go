@@ -4,8 +4,8 @@ import (
 	"context"
 	"database/sql"
 	"errors"
-	"simple-note/helper"
-	"simple-note/model/domain"
+	"github.com/milhamap/simple-note/helper"
+	"github.com/milhamap/simple-note/model/domain"
 )
 
 type NoteRepository struct {

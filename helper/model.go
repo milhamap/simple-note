@@ -1,8 +1,8 @@
 package helper
 
 import (
-	"simple-note/model/domain"
-	"simple-note/model/web"
+	"github.com/milhamap/simple-note/model/domain"
+	"github.com/milhamap/simple-note/model/web"
 )
 
 func ToNoteResponse(note domain.Note) web.NoteResponse {

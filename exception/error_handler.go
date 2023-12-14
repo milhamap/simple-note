@@ -2,9 +2,9 @@ package exception
 
 import (
 	"github.com/go-playground/validator"
+	"github.com/milhamap/simple-note/helper"
+	"github.com/milhamap/simple-note/model/web"
 	"net/http"
-	"simple-note/helper"
-	"simple-note/model/web"
 )
 
 func ErrorHandler(writer http.ResponseWriter, request *http.Request, err interface{}) {

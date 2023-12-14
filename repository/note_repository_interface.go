@@ -3,7 +3,7 @@ package repository
 import (
 	"context"
 	"database/sql"
-	"simple-note/model/domain"
+	"github.com/milhamap/simple-note/model/domain"
 )
 
 type NoteRepositoryInterface interface {

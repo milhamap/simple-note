@@ -2,7 +2,7 @@ package main
 
 import (
 	_ "github.com/go-sql-driver/mysql"
-	"simple-note/helper"
+	"github.com/milhamap/simple-note/helper"
 )
 
 func main() {
